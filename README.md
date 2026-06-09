@@ -8,6 +8,13 @@ This tool checks whether an NGINX server is likely exposed to the critical rewri
 [![CVSS 9.2](https://img.shields.io/badge/CVSS-9.2-critical-red)](https://nvd.nist.gov/vuln/detail/CVE-2026-42945)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+## Ping7 resources
+
+- Full self-check guide: https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check/
+- CVE repair service: https://ping7.cc/cve-repair/
+- Sample repair report: https://ping7.cc/cve-repair/sample-report/
+- Live CVE alerts: https://t.me/ping7cve
+
 ## Quick Start
 
 Inspect first:
@@ -60,13 +67,29 @@ The script reports one of:
 4. Review access and error logs from the exposure window.
 5. Restart NGINX and confirm the detector reports clean.
 
-Full guide: https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check
+## Repair Handoff
+
+If you need help interpreting the result, send:
+
+```text
+Domain or server:
+NGINX version:
+CVE: CVE-2026-42945
+Detector result: CLEAN / VULNERABLE / SUSPICIOUS
+First suspicious timestamp:
+Symptoms: worker crash, long URI logs, redirect, config change, or scanner result
+Logs still available: yes / no
+```
+
+Do not send passwords in the first message. Send symptoms, timestamps, screenshots, and log snippets.
 
 Need hands-on help: https://ping7.cc/cve-repair
 
 ## Defensive Scope
 
-This project does not contain exploit code. It is intended only for systems you own or are authorized to audit.
+This project is defensive only. Run it only on systems you own or are authorized to audit.
+
+It does not include exploit code, credential theft, unauthorized scanning, or instructions for offensive access.
 
 ## License
 
