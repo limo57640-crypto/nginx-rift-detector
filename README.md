@@ -10,6 +10,7 @@ This tool checks whether an NGINX server is likely exposed to the critical rewri
 
 ## Ping7 resources
 
+- All GitHub tools: https://ping7.cc/github-tools/
 - Full self-check guide: https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check/
 - CVE repair service: https://ping7.cc/cve-repair/
 - Sample repair report: https://ping7.cc/cve-repair/sample-report/
