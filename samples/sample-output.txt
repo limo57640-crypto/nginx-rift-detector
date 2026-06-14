@@ -1,0 +1,12 @@
+NGINX Rift CVE-2026-42945 Detector
+
+Checks:
+- NGINX version
+- rewrite configuration
+- access and error logs
+- Linux ASLR
+- worker user
+
+Result: SUSPICIOUS (0 critical, 2 warnings)
+Next: review rewrite rules and error-log crash entries before closing the ticket.
+Guide: https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check

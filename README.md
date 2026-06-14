@@ -59,6 +59,37 @@ The script reports one of:
 - `VULNERABLE`: version/config signals indicate exposure.
 - `SUSPICIOUS`: log or runtime indicators need manual review.
 
+## Sample Output
+
+```text
+NGINX Rift CVE-2026-42945 Detector
+
+Checks:
+- NGINX version
+- rewrite configuration
+- access and error logs
+- Linux ASLR
+- worker user
+
+Result: SUSPICIOUS (0 critical, 2 warnings)
+Next: review rewrite rules and error-log crash entries before closing the ticket.
+Guide: https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check
+```
+
+## Exit Status
+
+This release is designed for interactive triage. It prints `CLEAN`, `VULNERABLE`,
+or `SUSPICIOUS` in the terminal and normally exits `0` unless the shell runtime
+itself fails. If you need CI-style exit codes, wrap the output status in your
+own deployment pipeline.
+
+## Limitations
+
+- It cannot prove exploitation did or did not happen.
+- It only reviews local files and logs available to the current user.
+- Rotated, deleted, or off-host logs may hide the relevant window.
+- Vendor backports can make a package version look older than the actual patched build.
+
 ## Fix Path
 
 1. Upgrade NGINX to a fixed build from your vendor.
@@ -84,6 +115,13 @@ Logs still available: yes / no
 Do not send passwords in the first message. Send symptoms, timestamps, screenshots, and log snippets.
 
 Need hands-on help: https://ping7.cc/cve-repair
+
+## Contributing
+
+Open an issue if you have a new defensive signal, a false positive, or a distro
+version that is reported incorrectly. Include the NGINX version, OS family,
+sanitized config line, and the detector result. Do not post live customer logs,
+secrets, or attack strings.
 
 ## Defensive Scope
 
