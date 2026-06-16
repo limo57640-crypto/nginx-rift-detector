@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://limo57640-crypto.github.io/nginx-rift-detector/sitemap.xml
