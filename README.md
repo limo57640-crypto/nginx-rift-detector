@@ -8,6 +8,8 @@ This tool checks whether an NGINX server is likely exposed to the critical rewri
 [![CVSS 9.2](https://img.shields.io/badge/CVSS-9.2-critical-red)](https://nvd.nist.gov/vuln/detail/CVE-2026-42945)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+Browse page: https://limo57640-crypto.github.io/nginx-rift-detector/
+
 ## Ping7 resources
 
 - All GitHub tools: https://ping7.cc/github-tools/
