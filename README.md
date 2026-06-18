@@ -7,8 +7,10 @@ This tool checks whether an NGINX server is likely exposed to the critical rewri
 [![CVE-2026-42945](https://img.shields.io/badge/CVE-2026--42945-critical-red)](https://nvd.nist.gov/vuln/detail/CVE-2026-42945)
 [![CVSS 9.2](https://img.shields.io/badge/CVSS-9.2-critical-red)](https://nvd.nist.gov/vuln/detail/CVE-2026-42945)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Browse GitHub Page](https://img.shields.io/badge/Browse-GitHub%20Page-0969da)](https://limo57640-crypto.github.io/nginx-rift-detector/)
+[![Ping7 Guide](https://img.shields.io/badge/Ping7-self--check-0f766e)](https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check/)
 
-Browse page: https://limo57640-crypto.github.io/nginx-rift-detector/
+**Browse the tool page:** https://limo57640-crypto.github.io/nginx-rift-detector/
 
 ## Ping7 resources
 
