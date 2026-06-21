@@ -1,16 +1,25 @@
-# NGINX Rift CVE-2026-42945 Detector
+# NGINX Rift Detector for CVE-2026-42945
 
-Read-only self-check script for **CVE-2026-42945**, also known as **NGINX Rift**.
+Read-only Bash checker for owned NGINX servers. It helps an operator answer two questions after the CVE-2026-42945 disclosure:
 
-This tool checks whether an NGINX server is likely exposed to the critical rewrite-module heap overflow and whether logs show suspicious exploitation indicators.
+- Is this server still running an exposed NGINX build or risky rewrite configuration?
+- Do local logs show crash, long-URI, or encoding signals that need review before the ticket is closed?
 
 [![CVE-2026-42945](https://img.shields.io/badge/CVE-2026--42945-critical-red)](https://nvd.nist.gov/vuln/detail/CVE-2026-42945)
 [![CVSS 9.2](https://img.shields.io/badge/CVSS-9.2-critical-red)](https://nvd.nist.gov/vuln/detail/CVE-2026-42945)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Browse GitHub Page](https://img.shields.io/badge/Browse-GitHub%20Page-0969da)](https://limo57640-crypto.github.io/nginx-rift-detector/)
 [![Ping7 Guide](https://img.shields.io/badge/Ping7-self--check-0f766e)](https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check/)
+[![Ping7 Repair](https://img.shields.io/badge/Ping7-CVE%20repair-b91c1c)](https://ping7.cc/cve-repair/)
 
-**Browse the tool page:** https://limo57640-crypto.github.io/nginx-rift-detector/
+## Start Here
+
+| Need | Link |
+| --- | --- |
+| Browse the tool page | https://limo57640-crypto.github.io/nginx-rift-detector/ |
+| Read the Ping7 self-check guide | https://ping7.cc/guides/nginx-rift-cve-2026-42945-self-check/ |
+| Compare with other Ping7 GitHub tools | https://ping7.cc/github-tools/ |
+| Send suspicious output for repair | https://ping7.cc/cve-repair/ |
 
 ## Ping7 resources
 
@@ -19,6 +28,13 @@ This tool checks whether an NGINX server is likely exposed to the critical rewri
 - CVE repair service: https://ping7.cc/cve-repair/
 - Sample repair report: https://ping7.cc/cve-repair/sample-report/
 - Live CVE alerts: https://t.me/ping7cve
+
+## Use This Repo When
+
+- You operate NGINX directly, through a reverse proxy, or behind a hosting control panel.
+- The server uses rewrite-heavy config and the patch window was not clearly documented.
+- You need a terminal result that can be pasted into an incident ticket.
+- You want a first pass before paying for cleanup or compromise review.
 
 ## Quick Start
 
@@ -30,11 +46,8 @@ less detect.sh
 sudo bash detect.sh
 ```
 
-One-liner:
-
-```bash
-curl -sSL https://raw.githubusercontent.com/limo57640-crypto/nginx-rift-detector/main/detect.sh | sudo bash
-```
+Do not run remote shell content straight into root. Download the script, review
+it, then run it on the server you are responsible for.
 
 ## What It Checks
 
@@ -105,7 +118,7 @@ own deployment pipeline.
 
 ## Repair Handoff
 
-If you need help interpreting the result, send:
+If the result is `VULNERABLE` or `SUSPICIOUS`, keep the output and send:
 
 ```text
 Domain or server:
@@ -117,7 +130,7 @@ Symptoms: worker crash, long URI logs, redirect, config change, or scanner resul
 Logs still available: yes / no
 ```
 
-Do not send passwords in the first message. Send symptoms, timestamps, screenshots, and log snippets.
+Do not send passwords in the first message. Send symptoms, timestamps, screenshots, and sanitized log snippets.
 
 Need hands-on help: https://ping7.cc/cve-repair
 
@@ -132,7 +145,7 @@ secrets, or attack strings.
 
 This project is defensive only. Run it only on systems you own or are authorized to audit.
 
-It does not include exploit code, credential theft, unauthorized scanning, or instructions for offensive access.
+It does not include offensive access code, credential theft, broad scanning, or abuse instructions.
 
 ## License
 
