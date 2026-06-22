@@ -29,6 +29,20 @@ Read-only Bash checker for owned NGINX servers. It helps an operator answer two 
 - Sample repair report: https://ping7.cc/cve-repair/sample-report/
 - Live CVE alerts: https://t.me/ping7cve
 
+## Issue or repair
+
+Open a GitHub issue when the detector crashes, flags a false positive, misses a safe defensive signal, or needs documentation cleanup. Keep the example non-sensitive.
+
+Use Ping7 repair when the result is `VULNERABLE` or `SUSPICIOUS`, or when the evidence includes live domains, customer traffic, private logs, crash timestamps, or config lines that should not be posted in public.
+
+## Evidence to keep
+
+- Detector output and version.
+- NGINX version and package source.
+- Relevant rewrite config lines, sanitized if needed.
+- First suspicious timestamp from access or error logs.
+- Whether logs were rotated, deleted, or stored off-host.
+
 ## Use This Repo When
 
 - You operate NGINX directly, through a reverse proxy, or behind a hosting control panel.
@@ -145,7 +159,7 @@ secrets, or attack strings.
 
 This project is defensive only. Run it only on systems you own or are authorized to audit.
 
-It does not include offensive access code, credential theft, broad scanning, or abuse instructions.
+No payloads. No broad scanning. No exploitation steps.
 
 ## License
 
